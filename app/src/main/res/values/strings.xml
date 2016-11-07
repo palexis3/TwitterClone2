@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TwitterApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="login_label">Connect to Twitter</string>
+    <string name="Tweet" />
+    <string name="Tweet2">Tweet</string>
+</resources>
