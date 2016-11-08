@@ -1,4 +1,4 @@
-package com.example.palexis3.twitterapp;
+package com.example.palexis3.twitterapp.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.palexis3.twitterapp.R;
+import com.example.palexis3.twitterapp.TwitterApp;
+import com.example.palexis3.twitterapp.TwitterClient;
 import  com.example.palexis3.twitterapp.fragments.UserTimelineFragment;
 import com.example.palexis3.twitterapp.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -25,19 +28,30 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        client = TwitterApp.getRestClient();
 
-        //Get account info
-        client.getUserInfo(new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                user = User.fromJson(response);
-                getSupportActionBar().setTitle(user.getScreenName());
-                populateProfileHeader(user);
-            }
-        });
+        boolean isMainProfile = getIntent().getBooleanExtra("isMainProfile", false);
+
+        if(isMainProfile) {
+            client = TwitterApp.getRestClient();
+
+            //Get account info
+            client.getUserInfo(new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    user = User.fromJson(response);
+                }
+            });
+
+            getSupportActionBar().setTitle(user.getScreenName());
+
+        } else {
+            user =  (User) getIntent().getSerializableExtra("user");
+        }
+
         // Get the screen name
         String screenName = getIntent().getStringExtra("screen_name");
+
+        populateProfileHeader(user);
 
         // Hasn't been created before. Do work.
         if (savedInstanceState == null) {

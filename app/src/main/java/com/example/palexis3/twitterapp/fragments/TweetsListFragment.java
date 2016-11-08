@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import com.example.palexis3.twitterapp.EndlessScrollListener;
 import com.example.palexis3.twitterapp.R;
-import com.example.palexis3.twitterapp.TweetsArrayAdapter;
+import com.example.palexis3.twitterapp.adapters.TweetsArrayAdapter;
 import com.example.palexis3.twitterapp.TwitterClient;
 import com.example.palexis3.twitterapp.models.Tweet;
 
@@ -56,8 +56,6 @@ public abstract class TweetsListFragment extends Fragment {
         tweets = new ArrayList<>();
         // Construct adaptor
         aTweets = new TweetsArrayAdapter(getActivity(), tweets);
-
-        // TODO: enforce populateTimeline
     }
 
     protected abstract void getOlderTweets(long lastTweetId);

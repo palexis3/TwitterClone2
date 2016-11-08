@@ -1,6 +1,7 @@
-package com.example.palexis3.twitterapp;
+package com.example.palexis3.twitterapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.palexis3.twitterapp.R;
+import com.example.palexis3.twitterapp.TwitterApp;
+import com.example.palexis3.twitterapp.TwitterClient;
+import com.example.palexis3.twitterapp.activities.ProfileActivity;
 import com.example.palexis3.twitterapp.models.Tweet;
+import com.example.palexis3.twitterapp.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.squareup.picasso.Picasso;
 
@@ -22,8 +28,13 @@ import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 // Taking Tweet objects and turn them into views
 public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
+
+    private Context adapterContext;
+    private User user;
+
     public TweetsArrayAdapter(Context context, List<Tweet> tweets) {
         super(context, android.R.layout.simple_list_item_1, tweets);
+        adapterContext = context;
     }
 
     //implement viewholder
@@ -33,6 +44,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
 
         // Get tweet
         final Tweet tweet = getItem(position);
+        user = tweet.getUser();
 
         // Find/inflate template
         if(convertView == null) {
@@ -71,7 +83,19 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
             ivFavorite.setImageResource(R.drawable.ic_action_favorite_unfilled);
         }
 
-        TwitterClient client = TwitterApp.getRestClient();
+
+        //user has clicked on a profile image
+        ivProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // launch profile view
+                Intent i = new Intent(adapterContext, ProfileActivity.class);
+                i.putExtra("user", user);
+                i.putExtra("isMainProfile", false);
+                adapterContext.startActivity(i);
+            }
+        });
+
         ivReply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

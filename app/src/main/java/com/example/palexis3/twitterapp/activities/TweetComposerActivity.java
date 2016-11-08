@@ -1,4 +1,4 @@
-package com.example.palexis3.twitterapp;
+package com.example.palexis3.twitterapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.palexis3.twitterapp.R;
+import com.example.palexis3.twitterapp.TwitterApp;
+import com.example.palexis3.twitterapp.TwitterClient;
+import com.example.palexis3.twitterapp.activities.TimelineActivity;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONObject;

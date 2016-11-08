@@ -1,4 +1,4 @@
-package com.example.palexis3.twitterapp;
+package com.example.palexis3.twitterapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.astuetz.PagerSlidingTabStrip;
+import com.example.palexis3.twitterapp.R;
 import  com.example.palexis3.twitterapp.fragments.HomeTimelineFragment;
 import  com.example.palexis3.twitterapp.fragments.MentionsTimelineFragment;
 
