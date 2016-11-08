@@ -91,7 +91,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
                 // launch profile view
                 Intent i = new Intent(adapterContext, ProfileActivity.class);
                 i.putExtra("user", user);
-                i.putExtra("isMainProfile", false);
+                i.putExtra("screen_name", user.getScreenName());
                 adapterContext.startActivity(i);
             }
         });

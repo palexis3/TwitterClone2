@@ -9,13 +9,26 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.example.palexis3.twitterapp.R;
-import  com.example.palexis3.twitterapp.fragments.HomeTimelineFragment;
-import  com.example.palexis3.twitterapp.fragments.MentionsTimelineFragment;
+import com.example.palexis3.twitterapp.TwitterApp;
+import com.example.palexis3.twitterapp.TwitterClient;
+import com.example.palexis3.twitterapp.fragments.HomeTimelineFragment;
+import com.example.palexis3.twitterapp.fragments.MentionsTimelineFragment;
+import com.example.palexis3.twitterapp.models.User;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class TimelineActivity extends AppCompatActivity {
+
+    private TwitterClient client;
+    private User user;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_home_timeline, menu);
@@ -48,8 +61,24 @@ public class TimelineActivity extends AppCompatActivity {
 
     public void onProfileView(MenuItem item) {
         // launch profile view
-        Intent i = new Intent(this, ProfileActivity.class);
-        startActivity(i);
+        client = TwitterApp.getRestClient();
+
+        //Get account info
+        client.getUserInfo(new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+                user = User.fromJson(response);
+                i.putExtra("user", user);
+                i.putExtra("screen_name", user.getScreenName());
+                startActivity(i);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                Toast.makeText(getApplicationContext(), "Couldn't find user", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     // Return order of fragments in the view pager
