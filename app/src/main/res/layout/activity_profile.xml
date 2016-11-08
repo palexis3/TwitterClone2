@@ -3,46 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.codepath.apps.mysimpletweets.ProfileActivity">
 
     <RelativeLayout
+        android:id="@+id/rlHeader"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/rlHeader">
+        android:layout_alignParentStart="true">
 
 
         <ImageView
+            android:id="@+id/ivProfileActivityImage"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:id="@+id/ivProfileActivityImage"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_marginLeft="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
             tools:src="@drawable/ic_launcher"/>
 
         <TextView
+            android:id="@+id/tvProfileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvProfileName"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/ivProfileActivityImage"
             android:layout_toEndOf="@+id/ivProfileActivityImage"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
             tools:text="Name"/>
 
         <TextView
+            android:id="@+id/tvProfileTagline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvProfileTagline"
             android:layout_below="@+id/tvProfileName"
             android:layout_toRightOf="@+id/ivProfileActivityImage"
             android:layout_toEndOf="@+id/ivProfileActivityImage"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
             tools:text="tagline"/>
 
 
@@ -60,20 +65,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="5 Followers"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"/>
 
         <TextView
             android:id="@+id/tvFollowing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="12 Following"/>
+            tools:text="12 Following"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"/>
     </LinearLayout>
 
     <FrameLayout
+        android:id="@+id/flContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/llCounts"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/flContainer"></FrameLayout>
+        android:layout_alignParentStart="true">
+    </FrameLayout>
 </RelativeLayout>
