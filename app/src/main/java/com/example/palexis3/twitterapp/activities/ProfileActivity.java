@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        user =  (User) getIntent().getSerializableExtra("user");
+        User user = (User) getIntent().getSerializableExtra("user");
 
         getSupportActionBar().setTitle(user.getScreenName());
 

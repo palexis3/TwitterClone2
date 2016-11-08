@@ -38,8 +38,9 @@ public class TimelineActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.twitter_bird );
+        getSupportActionBar().setLogo(R.drawable.ic_twitter);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         setContentView(R.layout.activity_timeline);

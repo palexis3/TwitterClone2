@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 // Parse the JSON + store date, encapsulate state logic or display logic
 public class Tweet {
+
     private String body;
     private long uid; // unique id for tweet
     private User user;
