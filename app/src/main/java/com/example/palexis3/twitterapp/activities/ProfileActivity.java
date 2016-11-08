@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.palexis3.twitterapp.R;
-import com.example.palexis3.twitterapp.TwitterClient;
+import com.example.palexis3.twitterapp.clients.TwitterClient;
 import com.example.palexis3.twitterapp.fragments.UserTimelineFragment;
 import com.example.palexis3.twitterapp.models.User;
 import com.squareup.picasso.Picasso;

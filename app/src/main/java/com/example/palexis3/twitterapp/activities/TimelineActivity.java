@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.astuetz.PagerSlidingTabStrip;
 import com.example.palexis3.twitterapp.R;
 import com.example.palexis3.twitterapp.TwitterApp;
-import com.example.palexis3.twitterapp.TwitterClient;
+import com.example.palexis3.twitterapp.clients.TwitterClient;
 import com.example.palexis3.twitterapp.fragments.HomeTimelineFragment;
 import com.example.palexis3.twitterapp.fragments.MentionsTimelineFragment;
 import com.example.palexis3.twitterapp.models.User;

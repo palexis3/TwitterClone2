@@ -1,4 +1,4 @@
-package com.example.palexis3.twitterapp;
+package com.example.palexis3.twitterapp.listeners;
 import android.widget.AbsListView;
 
 public abstract class EndlessScrollListener implements AbsListView.OnScrollListener {

@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.codepath.oauth.OAuthLoginActionBarActivity;
 import com.example.palexis3.twitterapp.R;
-import com.example.palexis3.twitterapp.TwitterClient;
+import com.example.palexis3.twitterapp.clients.TwitterClient;
 
 public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 

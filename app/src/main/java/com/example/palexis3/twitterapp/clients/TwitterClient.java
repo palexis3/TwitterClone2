@@ -1,4 +1,4 @@
-package com.example.palexis3.twitterapp;
+package com.example.palexis3.twitterapp.clients;
 
 import android.content.Context;
 

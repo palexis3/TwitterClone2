@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.example.palexis3.twitterapp.TwitterApp;
-import com.example.palexis3.twitterapp.TwitterClient;
+import com.example.palexis3.twitterapp.clients.TwitterClient;
 import com.example.palexis3.twitterapp.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 

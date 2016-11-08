@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.palexis3.twitterapp.R;
 import com.example.palexis3.twitterapp.TwitterApp;
-import com.example.palexis3.twitterapp.TwitterClient;
+import com.example.palexis3.twitterapp.clients.TwitterClient;
 import com.example.palexis3.twitterapp.activities.ProfileActivity;
 import com.example.palexis3.twitterapp.models.Tweet;
 import com.example.palexis3.twitterapp.models.User;

@@ -8,10 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.palexis3.twitterapp.EndlessScrollListener;
+import com.example.palexis3.twitterapp.listeners.EndlessScrollListener;
 import com.example.palexis3.twitterapp.R;
 import com.example.palexis3.twitterapp.adapters.TweetsArrayAdapter;
-import com.example.palexis3.twitterapp.TwitterClient;
+import com.example.palexis3.twitterapp.clients.TwitterClient;
 import com.example.palexis3.twitterapp.models.Tweet;
 
 import java.util.ArrayList;
